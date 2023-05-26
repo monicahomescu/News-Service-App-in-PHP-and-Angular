@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>View news</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Text</th>
+            <th>Title</th>
+            <th>Producer</th>
+            <th>Date</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let news of allNews">
+            <td>{{news.text}}</td>
+            <td>{{news.title}}</td>
+            <td>{{news.producer}}</td>
+            <td>{{news.date}}</td>
+            <td>{{news.category}}</td>
+            <td>
+              <button (click)="updateNews(news.id)" class="btn btn-warning" style="margin-left: 10px">Update</button>
+            </td>   
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

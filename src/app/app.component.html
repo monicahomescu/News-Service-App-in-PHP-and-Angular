@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="view" class="nav-link" 
+               routerLinkActive="active">View news</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="add" class="nav-link" 
+                  routerLinkActive="active">Add news</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="filter" class="nav-link" 
+                routerLinkActive="active">Filter news</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
+    </li>
+    <li class="nav-item">
+      <button type="button" *ngIf="logoutbtn" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

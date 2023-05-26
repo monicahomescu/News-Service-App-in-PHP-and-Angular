@@ -1,0 +1,47 @@
+<h2>Update news</h2>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="name">Text</label>
+        <input type="text" class="form-control" id="text" 
+            required [(ngModel)]="news.text" name="text" [value]="initial.text">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" class="form-control" id="title" 
+            required [(ngModel)]="news.title" name="title" [value]="initial.title">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Producer</label>
+        <input type="text" class="form-control" id="producer" 
+              required [(ngModel)]="news.producer" name="producer" [value]="initial.producer">
+      </div>
+  
+      <div class="form-group">
+          <label for="name">Date</label>
+          <input type="date" class="form-control" id="date" 
+                required [(ngModel)]="news.date" name="date" [value]="initial.date">
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Category</label>
+          <input type="text" class="form-control" id="category" 
+                required [(ngModel)]="news.category" name="category" [value]="initial.category">
+        </div>
+        
+    <button type="submit" class="btn btn-success">Submit</button>
+
+    <br><span>{{ error }}</span>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Successfully submitted!</h4>
+</div>
+
+<div *ngIf="submitted && areTextboxesEmpty()">
+  <p>Please fill in all the textboxes.</p>
+</div>
