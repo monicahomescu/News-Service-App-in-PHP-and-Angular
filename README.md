@@ -1,4 +1,4 @@
-# News-Service-App-in-Angular
+# News-Service-App-in-PHP-and-Angular
 
 A `server-side web application` for a news service using a `PHP backend` and an `Angular frontend`.
 
